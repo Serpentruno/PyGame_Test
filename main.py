@@ -152,6 +152,3 @@ while not game_Over:
     Haciendo la Utlima PRUEBA 
     
     .... """
-=======
-    AGREGANDO PARA PROBAR PUSH"""
->>>>>>> 5fc64c0bbe11f143890af45610c0a120130b4e75
