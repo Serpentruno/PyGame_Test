@@ -7,7 +7,7 @@ class Player:
         self.image = pygame.image.load("player_size.png")
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
-        self.direction = 0
+        self.direction = 1
         self.move_left = False
         self.move_right = False
         self.move_up = False

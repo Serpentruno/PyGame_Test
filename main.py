@@ -52,7 +52,6 @@ class Juego:
 
                     if event.key == pygame.K_SPACE:
                         self.fire_laser()
-                        print(self.player.rect.midtop)
 
                 elif event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
@@ -75,7 +74,6 @@ class Juego:
     def fire_laser(self):
         new_laser = Laser(self)
         self.lasers.add(new_laser)
-
 if __name__ == "__main__":
     a = Juego()
     a.run_game()

@@ -9,13 +9,14 @@ class Laser(Sprite):
         self.rect = pygame.Rect(0, 0, a_game.ancho_laser, a_game.alto_laser)
         self.rect.midtop = (a_game.player.rect.midtop[0] , a_game.player.rect.midtop[1] + 12)
         self.game = a_game
+        self.direction = a_game.player.direction
         self.x = float(self.rect.x)
     
     def update(self):
-        if self.game.player.direction == 0:
+        if self.direction == 0:
             self.x -= self.game.speed_laser
             self.rect.x = self.x
-        elif self.game.player.direction == 1:
+        elif self.direction == 1:
             self.x += self.game.speed_laser
             self.rect.x = self.x
             
