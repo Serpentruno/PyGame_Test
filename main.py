@@ -147,4 +147,7 @@ while not game_Over:
     clock.tick(100)
     pygame.display.update() 
     
-    AGREGANDO PARA PROBAR PUSH"""
+    AGREGANDO PARA PROBAR PUSH
+    Haciendo la Utlima PRUEBA 
+    
+    .... """
