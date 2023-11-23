@@ -145,10 +145,4 @@ while not game_Over:
                       player_Size, player_Size))
     
     clock.tick(100)
-    pygame.display.update() 
-    
-<<<<<<< HEAD
-    AGREGANDO PARA PROBAR PUSH
-    Haciendo la Utlima PRUEBA 
-    
-    .... """
+    pygame.display.update() """
