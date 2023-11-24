@@ -1,5 +1,4 @@
 import pygame
-import random
 import sys
 
 from player import Player
@@ -29,6 +28,7 @@ class Juego:
         self.color_laser = (255,0,0)
         self.player = Player(self)
         self.lasers = pygame.sprite.Group()
+        self.total_lasers = 8
 
     def run_game(self):
         while not game_Over:
@@ -82,8 +82,10 @@ class Juego:
             pygame.display.flip()
 
     def fire_laser(self):
-        new_laser = Laser(self)
-        self.lasers.add(new_laser)
+        if self.total_lasers != 0:
+            new_laser = Laser(self)
+            self.lasers.add(new_laser)
+            self.total_lasers = self.total_lasers - 1
 if __name__ == "__main__":
     a = Juego()
     a.run_game()
