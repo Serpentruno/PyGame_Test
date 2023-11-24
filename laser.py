@@ -11,6 +11,8 @@ class Laser(Sprite):
         self.game = a_game
         self.direction = a_game.player.direction
         self.x = float(self.rect.x)
+        #self.sound = pygame.mixer.Sound("ARCHIVO.wav")
+        #self.sound.play()
     
     def update(self):
         if self.direction == 0:
@@ -19,6 +21,14 @@ class Laser(Sprite):
         elif self.direction == 1:
             self.x += self.game.speed_laser
             self.rect.x = self.x
-            
+        
+        self.lasers = self.game.lasers
+        self.enemies = self.game.enemies
+
+        crush = pygame.sprite.groupcollide(self.lasers, self.enemies, True, True)
+        
+        if crush:
+            self.game.total_lasers += 1
+
     def draw_laser(self):
         pygame.draw.rect(self.screen, self.color, self.rect)
