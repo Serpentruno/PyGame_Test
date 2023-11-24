@@ -11,8 +11,8 @@ class Laser(Sprite):
         self.game = a_game
         self.direction = a_game.player.direction
         self.x = float(self.rect.x)
-        #self.sound = pygame.mixer.Sound("ARCHIVO.wav")
-        #self.sound.play()
+        self.sound = pygame.mixer.Sound("laser.wav")
+        self.sound.play()
     
     def update(self):
         if self.direction == 0:

@@ -8,7 +8,7 @@ from enemy import Enemy
 #COSTINANTS
 ANCHO = 800
 ALTO = 600
-
+ 
 RED = (255,0,0)
 BLUE = (0,0,255)
 YELLOW = (0,255,0)
@@ -32,9 +32,9 @@ class Juego:
         self.lasers = pygame.sprite.Group()
         self.total_lasers = 8
         self.enemies = pygame.sprite.Group()
-        #pygame.mixer_music.load("MUSICA.wav")
-        #pygame.mixer.music.play(-1) #ININITAMENTE
-        #pygame.mixer.music.set_volume(0.2) #0 - 1
+        pygame.mixer_music.load("base_music.wav")
+        pygame.mixer.music.play(-1) #ININITAMENTE
+        pygame.mixer.music.set_volume(0.2) #0 - 1
         self._create_enemy()
 
     def run_game(self):
