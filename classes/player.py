@@ -4,7 +4,7 @@ class Player:
     def __init__(self, a_game):
         self.screen = a_game.screen
         self.screen_rect = a_game.screen.get_rect()
-        self.image = pygame.image.load("player_size.png")
+        self.image = pygame.image.load("image/player_size.png")
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
         self.direction = 1

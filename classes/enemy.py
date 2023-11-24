@@ -6,15 +6,15 @@ class Enemy(Sprite):
     def __init__(self, a_game):
         super().__init__()
         self.screen = a_game.screen
-        self.image = pygame.image.load("enemy_size.png")
+        self.image = pygame.image.load("image/enemy_size.png")
         self.rect = self.image.get_rect()
         self.direction = random.choice([0,1])
 
         if self.direction == 0:
-            self.image = pygame.image.load("enemy_left.png")
+            self.image = pygame.image.load("image/enemy_left.png")
             self.rect.x = a_game.screen.get_rect().right
         else:
-            self.image = pygame.image.load("enemy_right.png")
+            self.image = pygame.image.load("image/enemy_right.png")
             self.rect.x = -self.rect.width 
 
         self.rect.y = random.randint(0,a_game.screen.get_rect().bottom - (2*self.rect.height))

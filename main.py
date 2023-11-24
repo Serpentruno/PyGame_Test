@@ -1,10 +1,10 @@
 import pygame
 import sys
 
-from player import Player
-from laser import Laser
-from enemy import Enemy
-from statistic import Statistic
+from classes.player import Player
+from classes.laser import Laser
+from classes.enemy import Enemy
+#from classes.statistic import Statistic
 from time import sleep
 
 
@@ -32,12 +32,12 @@ class Juego:
         self.alto_laser = 4
         self.color_laser = (255,0,0)
         self.remaining_lives = 3
-        self.statistic = Statistic(self)
+        #self.statistic = Statistic(self)
         self.player = Player(self)
         self.lasers = pygame.sprite.Group()
         self.total_lasers = 8
         self.enemies = pygame.sprite.Group()
-        pygame.mixer_music.load("base_music.wav")
+        pygame.mixer_music.load("sound/base_music.wav")
         pygame.mixer.music.play(-1) #ININITAMENTE
         pygame.mixer.music.set_volume(0.2) #0 - 1
         self._create_enemy()
@@ -50,11 +50,11 @@ class Juego:
 
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
-                        self.player.image = pygame.image.load("player_left.png")
+                        self.player.image = pygame.image.load("image/player_left.png")
                         self.player.direction = 0
                         self.player.move_left = True
                     if event.key == pygame.K_RIGHT:
-                        self.player.image = pygame.image.load("player_right.png")
+                        self.player.image = pygame.image.load("image/player_right.png")
                         self.player.direction = 1
                         self.player.move_right = True
                     if event.key == pygame.K_UP:
