@@ -27,3 +27,7 @@ class Player:
 
     def run(self):
         self.screen.blit(self.image, self.rect)
+
+    def center_player(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        #self.x = float(self.rect.x)

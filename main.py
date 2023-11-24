@@ -4,7 +4,9 @@ import sys
 from player import Player
 from laser import Laser
 from enemy import Enemy
-from statistics import Statistics
+from statistic import Statistic
+from time import sleep
+
 
 #COSTINANTS
 ANCHO = 800
@@ -29,6 +31,8 @@ class Juego:
         self.ancho_laser = 15
         self.alto_laser = 4
         self.color_laser = (255,0,0)
+        self.remaining_lives = 3
+        self.statistic = Statistic(self)
         self.player = Player(self)
         self.lasers = pygame.sprite.Group()
         self.total_lasers = 8
@@ -119,8 +123,15 @@ class Juego:
         if not self.enemies:
             self._create_enemy()
         if pygame.sprite.spritecollideany(self.player, self.enemies):
-            print("fin")
+            self.enemy_collide()
 
+    def enemy_collide(self):
+        self.remaining_lives -= 1
+
+        self._create_enemy()
+        self.player.center_player()
+
+        sleep(0.5)
 
 if __name__ == "__main__":
     a = Juego()
