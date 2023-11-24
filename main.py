@@ -23,7 +23,7 @@ class Juego:
         self.screen = pygame.display.set_mode((ANCHO, ALTO))
         pygame.display.set_caption("Juego de Prueba")
         self.color = BACKGROUND_COLOR
-        self.speed_laser = 1
+        self.speed_laser = 0.1
         self.ancho_laser = 15
         self.alto_laser = 4
         self.color_laser = (255,0,0)
@@ -67,6 +67,17 @@ class Juego:
             self.screen.fill(self.color)
             self.player.run()
             self.lasers.update()
+
+            for laser in self.lasers.copy():
+                if laser.direction == 0:
+                    if laser.rect.right <= 0:
+                        self.lasers.remove(laser)
+                        print(len(self.lasers))
+                if laser.direction == 1:
+                    if laser.rect.left >= ANCHO:
+                        self.lasers.remove(laser)
+                        print(len(self.lasers))
+
             for laser in self.lasers.sprites():
                 laser.draw_laser()
             pygame.display.flip()
