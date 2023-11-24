@@ -12,17 +12,24 @@ class Player:
         self.move_right = False
         self.move_up = False
         self.move_down = False
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
+        self.game = a_game
 
 
     def move(self):
         if self.move_left and self.rect.left > 0:
-            self.rect.x -= 1
+            self.x -= self.game.speed_player
+            self.rect.x = self.x
         if self.move_right and self.rect.right < self.screen_rect.right:
-            self.rect.x += 1
+            self.x += self.game.speed_player
+            self.rect.x = self.x
         if self.move_up and self.rect.top > 0:
-            self.rect.y -= 1
+            self.y -= self.game.speed_player
+            self.rect.y = self.y
         if self.move_down and self.rect.bottom < self.screen_rect.bottom:
-            self.rect.y += 1
+            self.y += self.game.speed_player
+            self.rect.y = self.y
     
 
     def run(self):

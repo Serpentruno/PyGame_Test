@@ -27,7 +27,8 @@ class Juego:
         self.game_over = False
         self.color = BACKGROUND_COLOR
         self.speed_laser = 1
-        self.speed_enemy = 1
+        self.speed_enemy = 0.5
+        self.speed_player = 0.5
         self.ancho_laser = 15
         self.alto_laser = 4
         self.color_laser = (255,0,0)
