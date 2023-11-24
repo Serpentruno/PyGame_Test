@@ -4,6 +4,7 @@ import sys
 from player import Player
 from laser import Laser
 from enemy import Enemy
+from statistics import Statistics
 
 #COSTINANTS
 ANCHO = 800
@@ -117,6 +118,8 @@ class Juego:
         self.enemies.update()
         if not self.enemies:
             self._create_enemy()
+        if pygame.sprite.spritecollideany(self.player, self.enemies):
+            print("fin")
 
 
 if __name__ == "__main__":

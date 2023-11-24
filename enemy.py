@@ -30,9 +30,9 @@ class Enemy(Sprite):
             self.x += self.game.speed_enemy
             self.rect.x = self.x
         
-        self.player = self.game.player
+        """ self.player = self.game.player
         self.enemies = self.game.enemies
         
         for enemy in self.enemies:
             if self.player.rect.colliderect(enemy.rect):
-                self.game.game_over = True
+                self.game.game_over = True """
